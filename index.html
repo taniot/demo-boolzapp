@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolzapp</title>
+
+    <!-- google font lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="sidebar">
+          <!-- header-->
+          <header>
+            <div class="header-left">
+              <!-- contact info -->
+              <div class="group-info">
+                <div class="image circle-helper">
+                  <img src="img/avatar_1.jpg" alt="Me stesso" />
+                </div>
+                <div class="info">Gaetano</div>
+              </div>
+              <!-- /contact info -->
+            </div>
+            <div class="header-right">
+              <ul class="list-buttons d-flex">
+                <li>i</li>
+                <li>i</li>
+                <li>i</li>
+              </ul>
+            </div>
+          </header>
+          <!-- header-->
+
+          <!-- notifiche -->
+          <div class="notifications">
+            <!-- contact info -->
+            <div class="group-info">
+              <div class="image circle-helper">i</div>
+              <div class="info">
+                <h4 class="primary-text">Ricevi notifiche di nuovi messaggi</h4>
+                <a href="#" class="secondary-text">Attiva notifiche desktop</a>
+              </div>
+            </div>
+            <!-- /contact info -->
+          </div>
+          <!-- cerca -->
+          <div class="search-contacts">
+            <div class="search-container">
+              <div class="search-icon">i</div>
+              <div class="search-input">
+                <input
+                  type="text"
+                  placeholder="Cerca o inizia una nuova chat"
+                  v-model="searchKey"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- lista contatti -->
+          <ul class="list-contacts">
+            <!-- contatto -->
+
+            <li
+              v-for="(contact, index) in filterContacts()"
+              class="contact"
+              :class="{active: currentContact === index}"
+              @click="changeContact(index)"
+              v-show="contact.visible"
+            >
+              <div class="group-info">
+                <div class="image circle-helper">
+                  <img :src="contact.avatar" :alt="contact.name" />
+                </div>
+                <div class="info">
+                  <h4 class="primary-text">{{ contact.name }}</h4>
+                  <span class="secondary-text">Ultimo accesso alle 12:00</span>
+                </div>
+              </div>
+            </li>
+            <!-- /contatto -->
+          </ul>
+        </div>
+        <!-- right element content -->
+        <div class="content">
+          <!-- header -->
+          <header>
+            <div class="header-left">
+              <div class="group-info">
+                <div class="image circle-helper">
+                  <img src="img/avatar_1.jpg" alt="Me stesso" />
+                </div>
+                <div class="info">
+                  <h4 class="primary-text">
+                    {{ contacts[currentContact].name }}
+                  </h4>
+                  <span class="secondary-text">Ultimo accesso alle 12:00</span>
+                </div>
+              </div>
+            </div>
+            <div class="header-right">
+              <ul class="list-buttons d-flex">
+                <li>i</li>
+                <li>i</li>
+                <li>i</li>
+              </ul>
+            </div>
+          </header>
+          <main>{{ contacts[currentContact].messages }}</main>
+          <footer>
+            <div>icona</div>
+            <div>input</div>
+            <div>icona</div>
+          </footer>
+        </div>
+        <!-- /right element content -->
+      </div>
+    </div>
+    <!-- vuejs -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- my js-->
+    <script src="js/main.js"></script>
+  </body>
+</html>

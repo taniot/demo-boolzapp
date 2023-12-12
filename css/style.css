@@ -1,0 +1,190 @@
+/*
+RESET
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+COMMON
+*/
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+body > #app {
+  background: linear-gradient(to bottom, #009688 15vh, #d9dbd5 0);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+header {
+  background-color: #eaeaea;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 17px 10px 10px;
+}
+
+.group-info {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.group-info .primary-text {
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.group-info .secondary-text {
+  color: #6b7376;
+  font-size: 13px;
+}
+
+.list-buttons {
+  gap: 20px;
+  color: #b1b1b1;
+}
+
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.circle-helper {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/*
+CONTAINER
+*/
+
+.container {
+  width: 80%;
+  display: flex;
+  height: 90%;
+}
+
+.sidebar {
+  background-color: #fff;
+  width: 35%;
+  flex-shrink: 0;
+  border-right: 1px solid #d6d6d6;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  background-color: indianred;
+  flex-grow: 1;
+}
+
+/*
+LEFT SIDEBAR
+*/
+
+.group-info .image {
+  width: 50px;
+  height: 50px;
+}
+
+.notifications {
+  background-color: #8edafc;
+  padding: 15px 20px;
+}
+
+.notifications .circle-helper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2fbff;
+  color: #8edafc;
+}
+
+.search-contacts {
+  background-color: #fafafa;
+  padding: 7px;
+}
+
+.search-contacts .search-container {
+  display: flex;
+  border: 1px solid #f5f5f5;
+  border-radius: 0 2px 2px 0;
+  background-color: #ffffff;
+  line-height: 1;
+}
+
+.search-contacts .search-container .search-icon {
+  width: 70px;
+  text-align: center;
+  color: #b6b9bb;
+  padding: 10px;
+}
+
+.search-contacts .search-container .search-input {
+  flex-grow: 1;
+  background-color: gainsboro;
+}
+
+.search-contacts .search-container input {
+  border: 0;
+  background-color: #ffffff;
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: 0;
+  padding: 10px;
+}
+
+.list-contacts {
+  overflow-y: auto;
+  /* height: 100%; */
+}
+
+.list-contacts .contact {
+  padding: 15px 20px;
+  border-bottom: 1px solid #f5f5f5;
+  cursor: pointer;
+}
+
+.list-contacts .contact.active {
+  background-color: #e9ebeb;
+}
+
+.list-contacts .contact:last-child {
+  border-bottom: 0;
+}
+
+/*
+RIGHT CONTENT
+*/
+
+.content main {
+  height: calc(100% - 140px);
+  background-image: url('../img/mine.jpg');
+}
+.content footer {
+  height: 70px;
+  background-color: #f3eeea;
+  display: flex;
+  align-items: center;
+}
